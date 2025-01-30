@@ -5,6 +5,7 @@ data class ProductModel(
     var productName: String =" ",
     var productDesc: String =" ",
     var price: Int = 0,
+    var imageUrl : String = "",
 )  {
 
 }

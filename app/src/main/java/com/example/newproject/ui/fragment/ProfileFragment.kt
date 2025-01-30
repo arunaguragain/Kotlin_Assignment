@@ -1,6 +1,7 @@
 package com.example.newproject.ui.fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -35,11 +36,12 @@ class ProfileFragment : Fragment() {
         var  currentUser = userViewModel.getCurrentUser()
 
         currentUser.let {
+            Log.d("checkpoints",currentUser?.uid.toString())
             userViewModel.getUserFromDatabase(it?.uid.toString())
         }
 
         userViewModel.userData.observe(requireActivity()){users-> //can use it in place of variable"users"
-            binding.profileEmail.text = users?.email
+            binding.profileEmail.setText(users?.email)
             binding.profileName.text = users?.firstName + " " +users?.lastName
         }
     }

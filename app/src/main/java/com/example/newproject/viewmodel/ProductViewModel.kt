@@ -1,5 +1,7 @@
 package com.example.newproject.viewmodel
 
+import android.content.Context
+import android.net.Uri
 import androidx.lifecycle.MutableLiveData
 import com.example.newproject.model.ProductModel
 import com.example.newproject.repository.ProductRepository
@@ -26,17 +28,14 @@ class ProductViewModel(val repository: ProductRepository) {
     var allProducts = MutableLiveData<List<ProductModel>?>()
         get() = _allProducts
 
-    var _loadingStateSingleProduct = MutableLiveData<Boolean>()
-    var loadingStateSingleProduct = MutableLiveData<Boolean>()
-        get() = _loadingState
 
     fun getProductById(productId: String){
-        _loadingStateSingleProduct.value = true
+//        _loadingStateSingleProduct.value = true
         repository.getProductById(productId){
             product, success, message ->
             if (success){
                 _products.value = product
-                _loadingStateSingleProduct.value = false
+//                _loadingStateSingleProduct.value = false
             }
         }
     }
@@ -54,5 +53,9 @@ class ProductViewModel(val repository: ProductRepository) {
                 _loadingState.value = false
             }
         }
+    }
+
+    fun uploadImage(context: Context, imageUri: Uri, callback: (String?) -> Unit){
+        repository.uploadImage(context, imageUri, callback)
     }
 }
