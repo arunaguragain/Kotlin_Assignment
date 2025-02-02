@@ -42,15 +42,16 @@ class ProductAdapter(val context: Context, var data : ArrayList<ProductModel>) :
         holder.pPrice.text = data[position].price.toString()
         holder.pDesc.text = data[position].productDesc
 
-//        Picasso.get().load(data[position].imageUrl).into(holder.imageView, object:Callback{
-//            override fun onSuccess() {
-//                holder.loading.visibility = View.GONE
-//            }
-//
-//            override fun onError(e: Exception?) {
-//            }
-//
-//        })
+        Picasso.get().load(data[position].imageUrl).into(holder.imageView, object:Callback{
+            override fun onSuccess() {
+
+                holder.loading.visibility = View.GONE
+            }
+
+            override fun onError(e: Exception?) {
+            }
+
+        })
 
         holder.editButton.setOnClickListener{
             val intent = Intent(context, UpdateProductActivity::class.java)
