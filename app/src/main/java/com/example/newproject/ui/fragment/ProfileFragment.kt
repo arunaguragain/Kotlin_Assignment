@@ -36,7 +36,6 @@ class ProfileFragment : Fragment() {
         var  currentUser = userViewModel.getCurrentUser()
 
         currentUser.let {
-            Log.d("checkpoints",currentUser?.uid.toString())
             userViewModel.getUserFromDatabase(it?.uid.toString())
         }
 

@@ -59,7 +59,6 @@ class RegisterActivity : AppCompatActivity() {
                     if (success) {
                         val userModel = UserModel(userId, email, fname, lname, address, contact)
                         addUser(userModel)
-                        finish()
                     } else {
                         loadingUtils.dismiss()
                         Toast.makeText(this@RegisterActivity, message, Toast.LENGTH_SHORT).show()
@@ -82,6 +81,7 @@ class RegisterActivity : AppCompatActivity() {
             if(success){
                 Toast.makeText(this@RegisterActivity
                     ,message,Toast.LENGTH_SHORT).show()
+                finish()
             }else{
                 Toast.makeText(this@RegisterActivity
                     ,message,Toast.LENGTH_SHORT).show()
