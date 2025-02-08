@@ -1,5 +1,6 @@
 package com.example.newproject.ui.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -9,6 +10,7 @@ import android.view.ViewGroup
 import com.example.newproject.R
 import com.example.newproject.databinding.FragmentProfileBinding
 import com.example.newproject.repository.UserRepositoryImpl
+import com.example.newproject.ui.activity.EditProfileActivity
 import com.example.newproject.viewmodel.UserViewModel
 
 
@@ -24,6 +26,7 @@ class ProfileFragment : Fragment() {
 
         binding = FragmentProfileBinding.inflate(inflater, container,false)
         return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -43,5 +46,10 @@ class ProfileFragment : Fragment() {
             binding.profileEmail.setText(users?.email)
             binding.profileName.text = users?.firstName + " " +users?.lastName
         }
+
+        binding.cardEditProfile.setOnClickListener({
+            val  intent = Intent(requireContext(), EditProfileActivity::class.java)
+            startActivity(intent)
+        })
     }
 }
