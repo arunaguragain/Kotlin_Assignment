@@ -10,7 +10,7 @@ data class UserModel(
     var lastName : String = "",
     var address : String = "",
     var phoneNumber : String = "",
-    var imageUrl : String = "",
+    var profileImageUrl : String = "",
 ) :
     Parcelable {
     constructor(parcel: Parcel) : this(
@@ -36,7 +36,7 @@ data class UserModel(
         parcel.writeString(lastName)
         parcel.writeString(address)
         parcel.writeString(phoneNumber)
-        parcel.writeString(imageUrl)
+        parcel.writeString(profileImageUrl)
     }
 
     companion object CREATOR : Parcelable.Creator<UserModel> {

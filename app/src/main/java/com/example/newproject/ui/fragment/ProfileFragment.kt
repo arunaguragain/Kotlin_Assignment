@@ -12,6 +12,7 @@ import com.example.newproject.databinding.FragmentProfileBinding
 import com.example.newproject.repository.UserRepositoryImpl
 import com.example.newproject.ui.activity.EditProfileActivity
 import com.example.newproject.viewmodel.UserViewModel
+import com.squareup.picasso.Picasso
 
 
 class ProfileFragment : Fragment() {
@@ -45,6 +46,17 @@ class ProfileFragment : Fragment() {
         userViewModel.userData.observe(requireActivity()){users-> //can use it in place of variable"users"
             binding.profileEmail.setText(users?.email)
             binding.profileName.text = users?.firstName + " " +users?.lastName
+
+            val profileImageUrl = users?.profileImageUrl
+            if (!profileImageUrl.isNullOrEmpty()) {
+                val updatedUrl = "$profileImageUrl?time=${System.currentTimeMillis()}"
+                Picasso.get()
+                    .load(updatedUrl)
+                    .placeholder(R.drawable.baseline_person_24)
+                    .into(binding.profileImage)
+            } else {
+                binding.profileImage.setImageResource(R.drawable.baseline_person_24)
+            }
         }
 
         binding.cardEditProfile.setOnClickListener({

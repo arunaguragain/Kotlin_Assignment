@@ -1,5 +1,7 @@
 package com.example.newproject.viewmodel
 
+import android.content.Context
+import android.net.Uri
 import androidx.lifecycle.MutableLiveData
 import com.example.newproject.model.UserModel
 import com.example.newproject.repository.UserRepository
@@ -48,6 +50,10 @@ class UserViewModel(val repo: UserRepository) {
 
     fun editProfile(userId: String, data:MutableMap<String, Any>, callback: (Boolean, String) -> Unit){
         repo.editProfile(userId, data, callback)
+    }
+
+    fun uploadImage(context: Context, imageUri: Uri, callback: (String?) -> Unit){
+        repo.uploadImage(context, imageUri, callback)
     }
 
 }
