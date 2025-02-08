@@ -1,9 +1,12 @@
 package com.example.newproject.ui.activity
 
+import android.net.Uri
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContract
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -11,16 +14,37 @@ import com.example.newproject.R
 import com.example.newproject.databinding.ActivityEditProfile2Binding
 import com.example.newproject.repository.UserRepositoryImpl
 import com.example.newproject.viewmodel.UserViewModel
+import com.squareup.picasso.Picasso
 
 class EditProfileActivity : AppCompatActivity() {
     lateinit var binding: ActivityEditProfile2Binding
     lateinit var userViewModel: UserViewModel
+    var currentProfileImageUri: Uri? = null
+
+    val pickImageLauncher = registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
+            uri?.let {
+
+                Picasso.get()
+                    .load(it)
+                    .placeholder(R.drawable.baseline_person_24) // Optional placeholder
+                    .error(R.drawable.placeholder) // Optional error image
+                    .into(binding.profileImageView)
+                currentProfileImageUri = it
+
+            }
+        }
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
         binding = ActivityEditProfile2Binding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.profileImageView.setOnClickListener({
+            pickImageLauncher.launch("image/*")
+        })
 
         val repo = UserRepositoryImpl()
         userViewModel = UserViewModel(repo)
@@ -36,6 +60,10 @@ class EditProfileActivity : AppCompatActivity() {
             binding.UpdateAddress.setText(it?.address.toString())
             binding.UpdateContact.setText(it?.phoneNumber.toString())
             binding.updateEmail.setText(it?.email.toString())
+
+//            Picasso.get().load(it?.profileImageUri).into(binding.profileImageView)
+
+
         }
 
         binding.btnUpdateProfile.setOnClickListener{
@@ -58,6 +86,10 @@ class EditProfileActivity : AppCompatActivity() {
             updatedMap["contact"] = contact
             updatedMap["email"] = email
 
+            currentProfileImageUri?.let {
+                updatedMap["profileImageUri"] = it.toString() // Save the URI or upload the image if needed
+            }
+
             val userId = currentUser?.uid
             if (userId != null) {
                 userViewModel.editProfile(userId, updatedMap) { success, message ->
@@ -71,7 +103,6 @@ class EditProfileActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "User not found", Toast.LENGTH_SHORT).show()
             }
-
         }
 
     ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -80,5 +111,7 @@ class EditProfileActivity : AppCompatActivity() {
             insets
         }
     }
+
+
 
 }

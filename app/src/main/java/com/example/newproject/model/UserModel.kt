@@ -10,14 +10,18 @@ data class UserModel(
     var lastName : String = "",
     var address : String = "",
     var phoneNumber : String = "",
-) : Parcelable {
+    var imageUrl : String = "",
+) :
+    Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString() ?:"",
         parcel.readString()?:"",
         parcel.readString()?:"",
         parcel.readString()?:"",
         parcel.readString()?:"",
+        parcel.readString()?:"",
         parcel.readString()?:""
+
     ) {
     }
 
@@ -32,6 +36,7 @@ data class UserModel(
         parcel.writeString(lastName)
         parcel.writeString(address)
         parcel.writeString(phoneNumber)
+        parcel.writeString(imageUrl)
     }
 
     companion object CREATOR : Parcelable.Creator<UserModel> {

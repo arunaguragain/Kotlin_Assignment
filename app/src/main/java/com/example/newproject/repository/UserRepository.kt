@@ -1,5 +1,7 @@
 package com.example.newproject.repository
 
+import android.content.Context
+import android.net.Uri
 import com.example.newproject.model.UserModel
 import com.google.firebase.auth.FirebaseUser
 
@@ -24,4 +26,8 @@ interface UserRepository {
     fun logout(callback: (Boolean, String) -> Unit)
 
     fun editProfile(userId: String, data:MutableMap<String, Any>, callback: (Boolean, String) -> Unit)
+
+    fun uploadImage(context: Context, imageUri: Uri, callback: (String?) -> Unit)
+
+    fun getFileNameFromUri(context: Context, uri: Uri): String?
 }
