@@ -72,11 +72,9 @@ class ProfileFragment : Fragment() {
                 .setTitle("Logout")
                 .setMessage("Are you sure you want to logout?")
                 .setPositiveButton("Yes") { dialog, _ ->
-                    // User confirmed logout, call the logout method in the view model
                     userViewModel.logout { success, message ->
                         if (success) {
                             Toast.makeText(requireContext(), "Logged out successfully", Toast.LENGTH_SHORT).show()
-                            // Navigate to LoginActivity and clear the back stack
                             val intent = Intent(requireContext(), LoginActivity::class.java)
                             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                             startActivity(intent)
@@ -87,7 +85,6 @@ class ProfileFragment : Fragment() {
                     dialog.dismiss()
                 }
                 .setNegativeButton("No") { dialog, _ ->
-                    // User cancelled, simply dismiss the dialog
                     dialog.dismiss()
                 }
                 .create()
