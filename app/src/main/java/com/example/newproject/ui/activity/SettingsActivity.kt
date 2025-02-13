@@ -54,6 +54,11 @@ class SettingsActivity : AppCompatActivity() {
             startActivity(intent)
         })
 
+        binding.cardTerms.setOnClickListener({
+            val  intent = Intent(this@SettingsActivity, TermsActivity ::class.java)
+            startActivity(intent)
+        })
+
         switchDarkMode.setOnCheckedChangeListener { _, isChecked ->
             settingsViewModel.toggleDarkMode(isChecked)
             if (isChecked) {
