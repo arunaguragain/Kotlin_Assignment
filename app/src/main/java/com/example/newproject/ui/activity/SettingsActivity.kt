@@ -49,6 +49,11 @@ class SettingsActivity : AppCompatActivity() {
             startActivity(intent)
         })
 
+        binding.cardContact.setOnClickListener({
+            val  intent = Intent(this@SettingsActivity, ContactActivity::class.java)
+            startActivity(intent)
+        })
+
         switchDarkMode.setOnCheckedChangeListener { _, isChecked ->
             settingsViewModel.toggleDarkMode(isChecked)
             if (isChecked) {
