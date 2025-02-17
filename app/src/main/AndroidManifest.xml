@@ -20,6 +20,12 @@
         tools:replace="android:fullBackupContent"
         tools:targetApi="31">
         <activity
+            android:name=".ui.activity.UpdateBookingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.MyTableActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activity.TableBookingActivity"
             android:exported="false" />
         <activity
