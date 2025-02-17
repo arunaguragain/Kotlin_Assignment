@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/profilebg"
     tools:context=".ui.fragment.DashboardFragment">
 
     <LinearLayout
@@ -18,8 +19,8 @@
 
         <ImageView
             android:id="@+id/userProfileIcon"
-            android:layout_width="72dp"
-            android:layout_height="54dp"
+            android:layout_width="62dp"
+            android:layout_height="50dp"
             android:src="@drawable/logo" />
 
         <TextView
@@ -32,7 +33,6 @@
 
     </LinearLayout>
 
-    <!-- "Order Now" and Price Section  -->
     <LinearLayout
         android:id="@+id/orderPriceLayout"
         android:layout_width="match_parent"
@@ -57,9 +57,9 @@
             android:id="@+id/orderNowButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Order Now"
             android:backgroundTint="@color/maroon"
-            android:textColor="@color/black"/>
+            android:text="Book a Table"
+            android:textColor="@color/white" />
     </LinearLayout>
 
     <!-- Featured Section: Special Offers or Deals -->
@@ -433,28 +433,27 @@
         android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:padding="16dp"
         android:background="@android:color/white"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="parent">
 
-        <Button
-            android:text="Order Now"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/maroon"
-            android:textColor="@android:color/white"/>
-
-        <Button
-            android:text="View Menu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/maroon"
-            android:textColor="@android:color/white"
-            android:layout_marginStart="16dp"/>
     </LinearLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="136dp"
+        android:layout_marginBottom="44dp"
+        android:backgroundTint="@color/maroon"
+        android:text="View Menu"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

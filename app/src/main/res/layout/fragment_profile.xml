@@ -133,33 +133,7 @@
             android:layout_height="wrap_content"
             app:cardCornerRadius="12dp"
             app:cardElevation="6dp"
-            android:layout_marginBottom="12dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:orientation="horizontal"
-                android:background="@color/pestal"
-                android:gravity="center_vertical">
-
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:tint="@color/grey"
-                    android:src="@drawable/baseline_fastfood_24"
-                    />
-
-                <TextView
-                    android:id="@+id/profileOrders"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="My Orders"
-                    android:layout_marginStart="12dp"
-                    android:textSize="16sp"
-                    android:textColor="@color/black" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+            android:layout_marginBottom="12dp"/>
 
 
         <androidx.cardview.widget.CardView
