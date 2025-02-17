@@ -54,11 +54,12 @@
             android:layout_marginEnd="16dp"/>
 
         <Button
-            android:id="@+id/orderNowButton"
+            android:id="@+id/bookATableButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/maroon"
             android:text="Book a Table"
+            android:onClick="bookATable"
             android:textColor="@color/white" />
     </LinearLayout>
 
@@ -111,12 +112,12 @@
                     android:padding="16dp">
 
                     <TextView
-                        android:text="20% Off on Veg Dishes"
-                        android:textSize="16sp"
-                        android:textColor="@android:color/black"
-                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"/>
+                        android:text="20% Off on Desserts"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:text="Hurry! Limited time offer"
@@ -155,39 +156,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Enjoy with any main course!"
-                        android:textSize="12sp"
-                        android:textColor="@color/black"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- Add more offer cards here -->
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="4dp"
-                android:clickable="true"
-                android:focusable="true">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Another Offer"
-                        android:textSize="16sp"
-                        android:textColor="@android:color/black"
-                        android:textStyle="bold"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Details of offer"
                         android:textSize="12sp"
                         android:textColor="@color/black"/>
                 </LinearLayout>
@@ -316,11 +284,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pizza"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
                     android:layout_marginTop="8dp"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:text="Yomari"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -350,11 +318,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Burger"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
                     android:layout_marginTop="8dp"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:text="Dhido Set"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -384,11 +352,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sandwich"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
                     android:layout_marginTop="8dp"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:text="Pani Puri"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -418,11 +386,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pasta"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
                     android:layout_marginTop="8dp"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:text="Chatpate"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>

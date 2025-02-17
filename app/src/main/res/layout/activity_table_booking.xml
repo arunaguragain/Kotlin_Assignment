@@ -8,106 +8,129 @@
     android:background="@drawable/profilebg"
     tools:context=".ui.activity.TableBookingActivity">
 
+    <!-- Title TextView -->
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Book a Table at Delicious Deck"
         android:textSize="22sp"
-        android:layout_marginTop="32dp"
         android:textStyle="bold"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Name EditText -->
     <EditText
         android:id="@+id/etName"
-        android:layout_width="0dp"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:hint="Your Name"
         android:inputType="textPersonName"
+        android:background="@drawable/edittext_bg"
+        android:padding="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="25dp" />
 
+    <!-- Email EditText -->
     <EditText
         android:id="@+id/etEmail"
-        android:layout_width="0dp"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:hint="Email Address"
         android:inputType="textEmailAddress"
+        android:background="@drawable/edittext_bg"
+        android:padding="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etName"
         android:layout_marginTop="16dp" />
 
+    <!-- Phone Number EditText -->
     <EditText
         android:id="@+id/etPhone"
-        android:layout_width="0dp"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:hint="Phone Number"
         android:inputType="phone"
+        android:background="@drawable/edittext_bg"
+        android:padding="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etEmail"
         android:layout_marginTop="16dp" />
 
+    <!-- Date EditText -->
     <EditText
         android:id="@+id/etDate"
-        android:layout_width="0dp"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:hint="Reservation Date"
         android:inputType="date"
+        android:background="@drawable/edittext_bg"
+        android:padding="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etPhone"
         android:layout_marginTop="16dp" />
 
+    <!-- Time EditText -->
     <EditText
         android:id="@+id/etTime"
-        android:layout_width="0dp"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:hint="Reservation Time"
         android:inputType="time"
+        android:background="@drawable/edittext_bg"
+        android:padding="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etDate"
         android:layout_marginTop="16dp" />
 
+    <!-- Guests EditText -->
     <EditText
         android:id="@+id/etGuests"
-        android:layout_width="0dp"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:hint="Number of Guests"
         android:inputType="number"
+        android:background="@drawable/edittext_bg"
+        android:padding="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etTime"
         android:layout_marginTop="16dp" />
 
+    <!-- Table No EditText -->
     <EditText
         android:id="@+id/etTableNo"
-        android:layout_width="0dp"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:hint="Table No"
         android:inputType="number"
+        android:background="@drawable/edittext_bg"
+        android:padding="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etGuests"
         android:layout_marginTop="16dp" />
 
+    <!-- Confirm Booking Button -->
     <Button
         android:id="@+id/btnBookTable"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text="Confirm Booking"
+        android:textColor="#FFFFFF"
         android:backgroundTint="@color/maroon"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etTableNo"
-        android:layout_marginTop="32dp" />
-
-
+        android:padding="12dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
