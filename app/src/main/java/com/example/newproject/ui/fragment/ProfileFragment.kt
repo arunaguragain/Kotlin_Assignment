@@ -14,6 +14,7 @@ import com.example.newproject.databinding.FragmentProfileBinding
 import com.example.newproject.repository.UserRepositoryImpl
 import com.example.newproject.ui.activity.EditProfileActivity
 import com.example.newproject.ui.activity.LoginActivity
+import com.example.newproject.ui.activity.MyTableActivity
 import com.example.newproject.ui.activity.SettingsActivity
 import com.example.newproject.viewmodel.UserViewModel
 import com.squareup.picasso.Picasso
@@ -65,6 +66,11 @@ class ProfileFragment : Fragment() {
 
         binding.cardEditProfile.setOnClickListener({
             val  intent = Intent(requireContext(), EditProfileActivity::class.java)
+            startActivity(intent)
+        })
+
+        binding.myTable.setOnClickListener({
+            val intent = Intent(requireContext(), MyTableActivity::class.java)
             startActivity(intent)
         })
 

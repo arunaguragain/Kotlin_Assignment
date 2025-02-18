@@ -127,14 +127,6 @@
         </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardMyOrders"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="6dp"
-            android:layout_marginBottom="12dp"/>
-
 
         <androidx.cardview.widget.CardView
             android:id="@+id/myTable"

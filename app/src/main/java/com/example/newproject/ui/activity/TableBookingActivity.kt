@@ -42,16 +42,8 @@ class TableBookingActivity : AppCompatActivity() {
             loadingUtils.dismiss()
             Toast.makeText(this, status, Toast.LENGTH_SHORT).show()
 
-            if (status.trim().equals("Booking Confirmed", ignoreCase = true)) {
-                Log.d("TableBookingActivity", "Navigating to MyTableActivity") // Debug log
-
-                val intent = Intent(this, MyTableActivity::class.java)
-                intent.putExtra("customerName", binding.etName.text.toString())
-                intent.putExtra("date", binding.etDate.text.toString())
-                intent.putExtra("time", binding.etTime.text.toString())
-                intent.putExtra("guests", binding.etGuests.text.toString())
-                startActivity(intent)
-                finish()
+            if (status == "Booking confirmed!") {
+                navigateToMyTableActivity()
             }
 
         })
@@ -76,7 +68,7 @@ class TableBookingActivity : AppCompatActivity() {
             }
 
             val booking = TableBookingModel(
-                bookingId = "", // Assuming new booking, so bookingId is empty
+                bookingId = "",
                 customerName = customerName,
                 date = date,
                 time = time,
@@ -87,6 +79,8 @@ class TableBookingActivity : AppCompatActivity() {
             tableBookingViewModel.createBooking(booking)
 
 
+
+
         }
 
 
@@ -95,6 +89,12 @@ class TableBookingActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+    }
+
+    private fun navigateToMyTableActivity() {
+        val intent = Intent(this, MyTableActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 
     private fun showTimePicker() {
@@ -110,17 +110,31 @@ class TableBookingActivity : AppCompatActivity() {
         timePickerDialog.show()
     }
 
+
     private fun showDatePicker() {
         val calendar = Calendar.getInstance()
-        val year = calendar.get(Calendar.YEAR)
-        val month = calendar.get(Calendar.MONTH)
-        val day = calendar.get(Calendar.DAY_OF_MONTH)
+        val today = calendar.clone() as Calendar
+        val minDate = today.timeInMillis  // Minimum date is today
+
+        // Set max date to 2 or 3 days from today
+        calendar.add(Calendar.DAY_OF_YEAR, 3)  // Set to 3 days ahead
+        val maxDate = calendar.timeInMillis  // Maximum date is 3 days from today
+
+        val year = today.get(Calendar.YEAR)
+        val month = today.get(Calendar.MONTH)
+        val day = today.get(Calendar.DAY_OF_MONTH)
 
         val datePickerDialog = DatePickerDialog(this, { _, selectedYear, selectedMonth, selectedDay ->
+            // Format and display the selected date
             val formattedDate = "${selectedYear}-${selectedMonth + 1}-${selectedDay}"
             binding.etDate.setText(formattedDate)
         }, year, month, day)
 
+        // Set the min and max dates
+        datePickerDialog.datePicker.minDate = minDate
+        datePickerDialog.datePicker.maxDate = maxDate
+
         datePickerDialog.show()
     }
+
 }

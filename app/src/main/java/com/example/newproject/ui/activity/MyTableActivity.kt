@@ -14,6 +14,7 @@ import com.example.newproject.databinding.ActivityMyTableBinding
 import com.example.newproject.model.TableBookingModel
 import com.example.newproject.repository.TableBookingRepository
 import com.example.newproject.repository.TableBookingRepositoryImpl
+import com.example.newproject.utils.LoadingUtils
 import com.example.newproject.viewmodel.TableBookingViewModel
 import com.google.firebase.database.FirebaseDatabase
 
@@ -22,11 +23,14 @@ class MyTableActivity : AppCompatActivity() {
     lateinit var binding: ActivityMyTableBinding
     lateinit var  tableBookingViewModel: TableBookingViewModel
     lateinit var adapter: TableBookingAdapter
+    lateinit var loadingUtils: LoadingUtils
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMyTableBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        loadingUtils = LoadingUtils(this)
 
         val repo = TableBookingRepositoryImpl()
         tableBookingViewModel = TableBookingViewModel(repo)
@@ -47,7 +51,7 @@ class MyTableActivity : AppCompatActivity() {
         adapter = TableBookingAdapter(
             bookingList = emptyList(),
             onUpdateClick = { booking -> openUpdateDialog(booking) },
-            onDeleteClick = { bookingId -> tableBookingViewModel.deleteBooking(bookingId) }
+            onDeleteClick = { bookingId -> onDeleteBooking(bookingId) }
         )
 
         binding.recyclerViewTableBooking.apply {
@@ -62,6 +66,7 @@ class MyTableActivity : AppCompatActivity() {
         }
 
         tableBookingViewModel.bookingStatus.observe(this) { status ->
+            loadingUtils.dismiss()
             Toast.makeText(this, status, Toast.LENGTH_SHORT).show()
         }
     }
@@ -70,6 +75,12 @@ class MyTableActivity : AppCompatActivity() {
         val intent = Intent(this, UpdateBookingActivity::class.java)
         intent.putExtra("booking", booking)
         startActivity(intent)
+    }
+
+    private fun onDeleteBooking(bookingId: String) {
+        loadingUtils.show()
+
+        tableBookingViewModel.deleteBooking(bookingId)
     }
 
 }
