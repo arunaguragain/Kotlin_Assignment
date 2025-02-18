@@ -49,18 +49,21 @@ class TableBookingViewModel (val repository: TableBookingRepository) {
     fun deleteBooking(bookingId: String) {
         repository.deleteBooking(bookingId, database) { success, error ->
             if (success) {
-                val currentList = bookingsList.value?.toMutableList()
-                currentList?.removeAll { it.bookingId == bookingId }
-                bookingsList.postValue(currentList)  // Update the LiveData
+                // Remove the deleted booking from the current bookings list
+                val currentList = bookingsList.value?.toMutableList() ?: mutableListOf()
+                val bookingToRemove = currentList.find { it.bookingId == bookingId }
+                if (bookingToRemove != null) {
+                    currentList.remove(bookingToRemove)  // Remove the booking from the list
+                }
 
+                // Update the LiveData with the modified list
+                bookingsList.postValue(currentList)
+
+                // Notify that the booking was deleted
                 bookingStatus.postValue("Booking deleted successfully!")
             } else {
                 bookingStatus.postValue("Error: $error")
             }
         }
     }
-
-
-
-
 }

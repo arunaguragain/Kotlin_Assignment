@@ -60,6 +60,8 @@ class TableBookingActivity : AppCompatActivity() {
             val customerName = binding.etName.text.toString()
             val date = binding.etDate.text.toString()
             val time = binding.etTime.text.toString()
+            val email = binding.etEmail.text.toString()
+            val phone = binding.etPhone.text.toString()
             val guestCount = binding.etGuests.text.toString().toIntOrNull()
 
             if (customerName.isEmpty() || date.isEmpty() || time.isEmpty() || guestCount == null || guestCount <= 0) {
@@ -70,6 +72,8 @@ class TableBookingActivity : AppCompatActivity() {
             val booking = TableBookingModel(
                 bookingId = "",
                 customerName = customerName,
+                email = email,
+                phone = phone,
                 date = date,
                 time = time,
                 guests = guestCount
@@ -116,7 +120,6 @@ class TableBookingActivity : AppCompatActivity() {
         val today = calendar.clone() as Calendar
         val minDate = today.timeInMillis  // Minimum date is today
 
-        // Set max date to 2 or 3 days from today
         calendar.add(Calendar.DAY_OF_YEAR, 3)  // Set to 3 days ahead
         val maxDate = calendar.timeInMillis  // Maximum date is 3 days from today
 

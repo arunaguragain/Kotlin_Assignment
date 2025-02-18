@@ -79,7 +79,6 @@ class MyTableActivity : AppCompatActivity() {
 
     private fun onDeleteBooking(bookingId: String) {
         loadingUtils.show()
-
         tableBookingViewModel.deleteBooking(bookingId)
     }
 

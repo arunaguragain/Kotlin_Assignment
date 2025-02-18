@@ -6,6 +6,8 @@ import android.os.Parcelable
 data class TableBookingModel(
     var bookingId: String = "",
     var customerName: String = "",
+    var email: String = "",
+    var phone: String=" ",
     var date: String = "",
     var time: String = "",
     var guests: Int = 0,
@@ -13,6 +15,8 @@ data class TableBookingModel(
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString() ?:"",
+        parcel.readString()?:"",
+        parcel.readString()?:"",
         parcel.readString()?:"",
         parcel.readString()?:"",
         parcel.readString()?:"",
@@ -24,6 +28,8 @@ data class TableBookingModel(
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(bookingId)
         parcel.writeString(customerName)
+        parcel.writeString(email)
+        parcel.writeString(phone)
         parcel.writeString(date)
         parcel.writeString(time)
         parcel.writeInt(guests)

@@ -19,7 +19,7 @@ class TableBookingAdapter(
         val tvCustomerName: TextView = view.findViewById(R.id.tvCustomerName)
         val tvDateTime: TextView = view.findViewById(R.id.tvDateTime)
         val tvGuests: TextView = view.findViewById(R.id.tvGuests)
-        val btnUpdate: Button = view.findViewById(R.id.btnedittablebooking)
+        val btnedit: Button = view.findViewById(R.id.btnedittablebooking)
         val btnDelete: Button = view.findViewById(R.id.btnDelete)
     }
 
@@ -35,7 +35,7 @@ class TableBookingAdapter(
         holder.tvDateTime.text = "${booking.date} at ${booking.time}"
         holder.tvGuests.text = "Guests: ${booking.guests}"
 
-        holder.btnUpdate.setOnClickListener { onUpdateClick(booking) }
+        holder.btnedit.setOnClickListener { onUpdateClick(booking) }
         holder.btnDelete.setOnClickListener { onDeleteClick(booking.bookingId) }
     }
 
