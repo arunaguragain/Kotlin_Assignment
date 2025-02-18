@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/profilebg"
     android:padding="16dp">
 
     <LinearLayout
@@ -24,7 +25,7 @@
             android:layout_height="wrap_content"
             android:hint="Enter customer name"
             android:inputType="textPersonName"
-            android:background="@android:drawable/editbox_background"
+           android:background="@drawable/edittext_bg"
             android:padding="8dp"
             android:layout_marginBottom="12dp"/>
 
@@ -41,7 +42,24 @@
             android:layout_height="wrap_content"
             android:hint="Enter email"
             android:inputType="textPersonName"
-            android:background="@android:drawable/editbox_background"
+            android:background="@drawable/edittext_bg"
+            android:padding="8dp"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone Number"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/etCustomerPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter phone number"
+            android:inputType="text|number"
+            android:background="@drawable/edittext_bg"
             android:padding="8dp"
             android:layout_marginBottom="12dp"/>
 
@@ -60,7 +78,7 @@
             android:hint="Select date"
             android:focusable="false"
             android:clickable="true"
-            android:background="@android:drawable/editbox_background"
+            android:background="@drawable/edittext_bg"
             android:padding="8dp"
             android:layout_marginBottom="12dp"/>
 
@@ -79,7 +97,7 @@
             android:hint="Select time"
             android:focusable="false"
             android:clickable="true"
-            android:background="@android:drawable/editbox_background"
+            android:background="@drawable/edittext_bg"
             android:padding="8dp"
             android:layout_marginBottom="12dp"/>
 
@@ -97,7 +115,7 @@
             android:layout_height="wrap_content"
             android:hint="Enter number of guests"
             android:inputType="number"
-            android:background="@android:drawable/editbox_background"
+            android:background="@drawable/edittext_bg"
             android:padding="8dp"
             android:layout_marginBottom="12dp"/>
 
@@ -105,30 +123,30 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Special Requests (Optional)"
+            android:text="Special Request"
             android:textSize="16sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/etSpecialRequest"
+            android:id="@+id/etCustomerSpecialRequest"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter special requests"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/edittext_bg"
+            android:hint="Special Request"
             android:inputType="textMultiLine"
-            android:background="@android:drawable/editbox_background"
-            android:padding="8dp"
-            android:layout_marginBottom="16dp"/>
+            android:padding="8dp" />
 
         <!-- Update Button -->
         <Button
             android:id="@+id/btnUpdateBooking"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Update Booking"
-            android:backgroundTint="@color/teal_700"
-            android:textColor="@android:color/white"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/maroon"
             android:padding="12dp"
-            android:layout_marginTop="16dp"/>
+            android:text="Update Booking"
+            android:textColor="@android:color/white" />
 
     </LinearLayout>
 </ScrollView>

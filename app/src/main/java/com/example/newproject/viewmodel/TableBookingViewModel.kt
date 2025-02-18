@@ -9,9 +9,8 @@ import com.example.newproject.repository.TableBookingRepositoryImpl
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
-class TableBookingViewModel (application: Application) : AndroidViewModel(application) {
+class TableBookingViewModel (val repository: TableBookingRepository) {
 
-    private val repository: TableBookingRepository = TableBookingRepositoryImpl()
     private val database: DatabaseReference = FirebaseDatabase.getInstance().reference
 
     val bookingStatus = MutableLiveData<String>()

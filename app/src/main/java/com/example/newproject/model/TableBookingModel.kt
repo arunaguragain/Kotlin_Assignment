@@ -17,7 +17,7 @@ data class TableBookingModel(
         parcel.readString()?:"",
         parcel.readString()?:"",
         parcel.readInt(),
-        parcel.readString()?:"",
+        parcel.readString()
     ) {
     }
 

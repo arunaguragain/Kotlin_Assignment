@@ -19,7 +19,7 @@ class TableBookingAdapter(
         val tvCustomerName: TextView = view.findViewById(R.id.tvCustomerName)
         val tvDateTime: TextView = view.findViewById(R.id.tvDateTime)
         val tvGuests: TextView = view.findViewById(R.id.tvGuests)
-        val btnUpdate: Button = view.findViewById(R.id.btnUpdate)
+        val btnUpdate: Button = view.findViewById(R.id.btnedittablebooking)
         val btnDelete: Button = view.findViewById(R.id.btnDelete)
     }
 

@@ -12,7 +12,10 @@ import com.example.newproject.R
 import com.example.newproject.adapter.TableBookingAdapter
 import com.example.newproject.databinding.ActivityMyTableBinding
 import com.example.newproject.model.TableBookingModel
+import com.example.newproject.repository.TableBookingRepository
+import com.example.newproject.repository.TableBookingRepositoryImpl
 import com.example.newproject.viewmodel.TableBookingViewModel
+import com.google.firebase.database.FirebaseDatabase
 
 class MyTableActivity : AppCompatActivity() {
 
@@ -24,6 +27,9 @@ class MyTableActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMyTableBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val repo = TableBookingRepositoryImpl()
+        tableBookingViewModel = TableBookingViewModel(repo)
 
         setupRecyclerView()
         observeViewModel()
