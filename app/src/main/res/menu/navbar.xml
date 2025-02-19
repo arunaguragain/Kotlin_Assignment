@@ -5,17 +5,18 @@
         android:icon="@drawable/baseline_home_24"
         android:id="@+id/navHome"
         />
-    <item android:title="Notification"
-        android:icon="@drawable/baseline_notifications_24"
+    <item
         android:id="@+id/navNotification"
-        />
+        android:icon="@drawable/baseline_restaurant_menu_24"
+        android:title="Menu" />
+
     <item android:title="Profile"
         android:icon="@drawable/baseline_person_24"
         android:id="@+id/navPerson"
         />
-    <item android:title="Search"
-        android:icon="@drawable/baseline_search_24"
+    <item
         android:id="@+id/navSearch"
-        />
+        android:icon="@drawable/baseline_reviews_24"
+        android:title="Review" />
 
 </menu>

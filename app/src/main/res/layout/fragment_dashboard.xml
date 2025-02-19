@@ -47,11 +47,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
             android:text="$1.99"
-            android:textSize="30sp"
-            android:textStyle="bold"
             android:textColor="@color/black"
-            android:layout_marginEnd="16dp"/>
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/bookATableButton"
@@ -201,26 +201,26 @@
             android:layout_margin="8dp">
 
             <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
+                android:layout_width="110dp"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:gravity="center">
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
 
                 <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:src="@drawable/placeholder"
-                    android:contentDescription="Popular Dish"/>
+                    android:layout_width="75dp"
+                    android:layout_height="63dp"
+                    android:contentDescription="Popular Dish"
+                    android:src="@drawable/momo" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
                     android:text="Momo"
                     android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="8dp"
-                    android:gravity="center"/>
+                    android:textStyle="bold" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -235,26 +235,26 @@
             android:layout_margin="8dp">
 
             <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
+                android:layout_width="110dp"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:gravity="center">
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
 
                 <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:src="@drawable/placeholder"
-                    android:contentDescription="Popular Dish"/>
+                    android:layout_width="75dp"
+                    android:layout_height="63dp"
+                    android:contentDescription="Popular Dish"
+                    android:src="@drawable/khanaset" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Dal Bhat"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
                     android:layout_marginTop="8dp"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:text="Khana Set"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -269,17 +269,17 @@
             android:layout_margin="8dp">
 
             <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
+                android:layout_width="110dp"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:gravity="center">
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
 
                 <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:src="@drawable/placeholder"
-                    android:contentDescription="Popular Dish"/>
+                    android:layout_width="75dp"
+                    android:layout_height="63dp"
+                    android:contentDescription="Popular Dish"
+                    android:src="@drawable/yomari" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -303,17 +303,17 @@
             android:layout_margin="8dp">
 
             <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
+                android:layout_width="110dp"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:gravity="center">
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
 
                 <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:src="@drawable/placeholder"
-                    android:contentDescription="Popular Dish"/>
+                    android:layout_width="75dp"
+                    android:layout_height="63dp"
+                    android:contentDescription="Popular Dish"
+                    android:src="@drawable/dhidoset" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -337,17 +337,17 @@
             android:layout_margin="8dp">
 
             <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
+                android:layout_width="110dp"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:gravity="center">
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
 
                 <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:src="@drawable/placeholder"
-                    android:contentDescription="Popular Dish"/>
+                    android:layout_width="75dp"
+                    android:layout_height="63dp"
+                    android:contentDescription="Popular Dish"
+                    android:src="@drawable/panipuri" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -371,17 +371,17 @@
             android:layout_margin="8dp">
 
             <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
+                android:layout_width="110dp"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:gravity="center">
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
 
                 <ImageView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:src="@drawable/placeholder"
-                    android:contentDescription="Popular Dish"/>
+                    android:layout_width="75dp"
+                    android:layout_height="63dp"
+                    android:contentDescription="Popular Dish"
+                    android:src="@drawable/chatpate" />
 
                 <TextView
                     android:layout_width="wrap_content"
