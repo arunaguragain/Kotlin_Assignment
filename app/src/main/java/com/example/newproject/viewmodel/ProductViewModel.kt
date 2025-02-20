@@ -3,8 +3,6 @@ package com.example.newproject.viewmodel
 import android.content.Context
 import android.net.Uri
 import androidx.lifecycle.MutableLiveData
-import com.example.newproject.model.ProductModel
-import com.example.newproject.repository.ProductRepository
 
 class ProductViewModel(val repository: ProductRepository) {
 
