@@ -4,10 +4,10 @@ import android.os.Parcel
 import android.os.Parcelable
 
 data class ReviewModel(
-    val id: String = " ",
-    val email: String = "",
-    val rating: Int = 0,
-    val message: String = ""
+    var reviewId: String = " ",
+    var email: String = "",
+    var rating: Int = 0,
+    var message: String = ""
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString() ?: "",
@@ -18,7 +18,7 @@ data class ReviewModel(
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeString(id)
+        parcel.writeString(reviewId)
         parcel.writeString(email)
         parcel.writeInt(rating)
         parcel.writeString(message)
