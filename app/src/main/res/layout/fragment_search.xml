@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     android:padding="16dp">
 
-    <!-- Leave a Review Heading -->
     <TextView
         android:id="@+id/headingTextView"
         android:layout_width="wrap_content"
@@ -36,7 +35,6 @@
             android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Rating Bar -->
     <TextView
         android:id="@+id/ratingTextView"
         android:layout_width="wrap_content"
@@ -57,7 +55,6 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="8dp" />
 
-    <!-- Review Content Input -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/contentInputLayout"
         android:layout_width="0dp"
@@ -76,7 +73,6 @@
             android:minLines="3" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Submit Button -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/submitButton"
         android:layout_width="350dp"
