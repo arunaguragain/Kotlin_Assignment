@@ -14,6 +14,7 @@ import com.example.newproject.databinding.FragmentProfileBinding
 import com.example.newproject.repository.UserRepositoryImpl
 import com.example.newproject.ui.activity.EditProfileActivity
 import com.example.newproject.ui.activity.LoginActivity
+import com.example.newproject.ui.activity.MyReviewActivity
 import com.example.newproject.ui.activity.MyTableActivity
 import com.example.newproject.ui.activity.SettingsActivity
 import com.example.newproject.viewmodel.UserViewModel
@@ -71,6 +72,11 @@ class ProfileFragment : Fragment() {
 
         binding.myTable.setOnClickListener({
             val intent = Intent(requireContext(), MyTableActivity::class.java)
+            startActivity(intent)
+        })
+
+        binding.cardFavorited.setOnClickListener({
+            val intent = Intent(requireContext(), MyReviewActivity::class.java)
             startActivity(intent)
         })
 
