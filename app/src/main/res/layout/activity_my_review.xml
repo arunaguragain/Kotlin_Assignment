@@ -9,7 +9,7 @@
     tools:context=".ui.activity.MyReviewActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewTableBooking"
+        android:id="@+id/recyclerViewReview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"

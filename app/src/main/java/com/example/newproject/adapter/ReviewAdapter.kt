@@ -1,8 +1,7 @@
-package com.example.newproject.adapter
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -13,14 +12,14 @@ class ReviewAdapter(
     var reviews: List<ReviewModel>,
     val onDeleteClick: (String) -> Unit,
     val onEditClick: (ReviewModel) -> Unit
-) : RecyclerView.Adapter<ReviewAdapter.ViewHolder>(){
+) : RecyclerView.Adapter<ReviewAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val emailTextView: TextView = view.findViewById(R.id.emailEditText)
         val ratingBar: RatingBar = view.findViewById(R.id.ratingBar)
         val messageTextView: TextView = view.findViewById(R.id.contentEditText)
-        val deleteButton: TextView = view.findViewById(R.id.reviewDeleteButton)
-        val editButton: TextView = view.findViewById(R.id.reviewEditButton)
+        val deleteButton: Button = view.findViewById(R.id.btnDeleteReview)
+        val editButton: Button = view.findViewById(R.id.btnEditReview)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ReviewAdapter.ViewHolder {
@@ -39,9 +38,12 @@ class ReviewAdapter(
     }
 
     override fun getItemCount(): Int {
-        fun updateData(newReviews: List<ReviewModel>) {
-            reviews = newReviews
-            notifyDataSetChanged()
-        }
+        return reviews.size
+    }
+
+    // Optional: You could define a method to update data if needed:
+    fun updateData(newReviews: List<ReviewModel>) {
+        reviews = newReviews
+        notifyDataSetChanged()
     }
 }
