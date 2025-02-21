@@ -32,6 +32,15 @@ class DashboardFragment : Fragment() {
             startActivity(intent)
         })
 
+        binding.button.setOnClickListener {
+            val fragment = NotificationFragment()
+            val transaction = requireActivity().supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.frameBottom, fragment)  // Replace with your fragment container ID
+            transaction.addToBackStack(null)
+            transaction.commit()
+        }
+
+
     }
 
 
