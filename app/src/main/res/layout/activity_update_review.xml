@@ -19,13 +19,12 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/emailEditText"
+            android:id="@+id/emailEditText1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Rating Bar -->
     <TextView
         android:id="@+id/ratingTextView"
         android:layout_width="wrap_content"
@@ -41,12 +40,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:numStars="5"
+        android:backgroundTint="@color/yellow"
         android:stepSize="1"
         app:layout_constraintTop_toBottomOf="@id/ratingTextView"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="8dp" />
 
-    <!-- Review Content Input -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/contentInputLayout"
         android:layout_width="0dp"
@@ -58,16 +57,15 @@
         android:layout_marginTop="16dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/contentEditText"
+            android:id="@+id/contentEditText1"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:inputType="textMultiLine"
             android:minLines="3" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Submit Button -->
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/submitButton"
+        android:id="@+id/submitButton1"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"

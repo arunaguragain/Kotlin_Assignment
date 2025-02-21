@@ -28,7 +28,6 @@ class SearchFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Initialize binding
         _binding = FragmentSearchBinding.inflate(inflater, container, false)
         return binding.root // Return the root view of the binding
     }
@@ -36,23 +35,23 @@ class SearchFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.submitButton.setOnClickListener {
+        binding.submitButton1.setOnClickListener {
             submitReview()
         }
     }
 
     private fun submitReview() {
-        val email = binding.emailEditText.text.toString().trim()
+        val email = binding.emailEditText1.text.toString().trim()
         val rating = binding.ratingBar.rating.toInt()
-        val message = binding.contentEditText.text.toString().trim()
+        val message = binding.contentEditText1.text.toString().trim()
 
         if (email.isEmpty()) {
-            binding.emailEditText.error = "Email is required"
+            binding.emailEditText1.error = "Email is required"
             return
         }
 
         if (message.isEmpty()) {
-            binding.contentEditText.error = "Message cannot be empty"
+            binding.contentEditText1.error = "Message cannot be empty"
             return
         }
 

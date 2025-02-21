@@ -29,7 +29,7 @@
         android:layout_marginTop="16dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/emailEditText"
+            android:id="@+id/emailEditText1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress" />
@@ -66,7 +66,7 @@
         android:layout_marginTop="16dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/contentEditText"
+            android:id="@+id/contentEditText1"
             android:layout_width="match_parent"
             android:layout_height="358dp"
             android:inputType="textMultiLine"
@@ -74,7 +74,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/submitButton"
+        android:id="@+id/submitButton1"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"

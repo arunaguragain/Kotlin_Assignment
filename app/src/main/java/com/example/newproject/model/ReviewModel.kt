@@ -4,7 +4,7 @@ import android.os.Parcel
 import android.os.Parcelable
 
 data class ReviewModel(
-    var reviewId: String = " ",
+    var reviewId: String = "",
     var email: String = "",
     var rating: Int = 0,
     var message: String = ""

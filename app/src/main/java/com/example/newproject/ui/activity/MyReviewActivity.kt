@@ -1,6 +1,7 @@
 package com.example.newproject.ui.activity
 
 import ReviewAdapter
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -11,12 +12,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.newproject.R
 import com.example.newproject.model.ReviewModel
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
-
+import com.example.newproject.utils.LoadingUtils
+import com.google.firebase.database.*
 
 class MyReviewActivity : AppCompatActivity() {
 
@@ -24,13 +21,15 @@ class MyReviewActivity : AppCompatActivity() {
     private lateinit var reviewAdapter: ReviewAdapter
     private lateinit var database: DatabaseReference
     private lateinit var reviewList: MutableList<ReviewModel>
+    lateinit var loadingUtils: LoadingUtils
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_my_review)
 
-        // Setup RecyclerView
+        loadingUtils = LoadingUtils(this)
+
         recyclerView = findViewById(R.id.recyclerViewReview)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
@@ -38,7 +37,11 @@ class MyReviewActivity : AppCompatActivity() {
         reviewAdapter = ReviewAdapter(reviews = reviewList, onDeleteClick = { reviewId ->
             deleteReview(reviewId)
         }, onEditClick = { review ->
-            // Handle editing logic here (if needed)
+            // When the edit button is clicked, navigate to UpdateReviewActivity with review data
+            val intent = Intent(this, UpdateReviewActivity::class.java).apply {
+                putExtra("review", review) // Passing ReviewModel as Parcelable
+            }
+            startActivity(intent)
         })
 
         recyclerView.adapter = reviewAdapter
@@ -77,9 +80,11 @@ class MyReviewActivity : AppCompatActivity() {
     }
 
     private fun deleteReview(reviewId: String) {
+        loadingUtils.show()
         database.child(reviewId).removeValue()
             .addOnCompleteListener {
                 if (it.isSuccessful) {
+                    loadingUtils.dismiss()
                     Toast.makeText(this, "Review deleted successfully!", Toast.LENGTH_SHORT).show()
                 } else {
                     Toast.makeText(this, "Failed to delete review.", Toast.LENGTH_SHORT).show()

@@ -3,7 +3,6 @@ package com.example.newproject.ui.fragment
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -38,7 +37,6 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        // this vanera context lidaina requireContext() use garna parxa
 
         var  repo = UserRepositoryImpl()
         userViewModel =UserViewModel(repo)

@@ -7,41 +7,41 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
+        android:background="@color/pestal"
         android:layout_height="wrap_content"
         android:padding="16dp">
 
-        <!-- Review Email -->
         <TextView
             android:id="@+id/emailTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Email" />
 
-        <!-- Rating Bar -->
         <RatingBar
             android:id="@+id/ratingBar"
             android:layout_width="wrap_content"
+            android:backgroundTint="@color/yellow"
             android:layout_height="wrap_content" />
 
-        <!-- Review Message -->
         <TextView
             android:id="@+id/messageTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Message" />
 
-        <!-- Delete Button -->
+
         <Button
             android:id="@+id/btnDeleteReview"
             android:layout_width="wrap_content"
+            android:backgroundTint="@color/maroon"
             android:layout_height="wrap_content"
             android:text="Delete" />
 
-        <!-- Edit Button -->
         <Button
             android:id="@+id/btnEditReview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
             android:text="Edit" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>
