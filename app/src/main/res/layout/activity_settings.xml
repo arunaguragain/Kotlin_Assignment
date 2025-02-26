@@ -48,13 +48,13 @@
                 android:drawableStart="@drawable/baseline_dark_mode_24"
                 android:paddingVertical="8dp"/>
 
-            <Switch
-                android:id="@+id/switch_notifications"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Enable Notifications"
-                android:drawableStart="@drawable/baseline_notifications_24"
-                android:paddingVertical="8dp"/>
+<!--            <Switch-->
+<!--                android:id="@+id/switch_notifications"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Enable Notifications"-->
+<!--                android:drawableStart="@drawable/baseline_notifications_24"-->
+<!--                android:paddingVertical="8dp"/>-->
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

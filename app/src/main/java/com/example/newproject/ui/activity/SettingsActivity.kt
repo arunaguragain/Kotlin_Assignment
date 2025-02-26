@@ -23,15 +23,15 @@ class SettingsActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val switchDarkMode = binding.switchDarkMode
-        val switchNotifications = binding.switchNotifications
+//        val switchNotifications = binding.switchNotifications
 
         settingsViewModel.darkModeEnabled.observe(this) { isEnabled ->
             switchDarkMode.isChecked = isEnabled
         }
 
-        settingsViewModel.notificationsEnabled.observe(this) { isEnabled ->
-            switchNotifications.isChecked = isEnabled
-        }
+//        settingsViewModel.notificationsEnabled.observe(this) { isEnabled ->
+//            switchNotifications.isChecked = isEnabled
+//        }
 
         binding.btnDeleteAccount.setOnClickListener {
             AlertDialog.Builder(this)
@@ -68,9 +68,9 @@ class SettingsActivity : AppCompatActivity() {
             }
         }
 
-        switchNotifications.setOnCheckedChangeListener { _, isChecked ->
-            settingsViewModel.toggleNotifications(isChecked)
-        }
+//        switchNotifications.setOnCheckedChangeListener { _, isChecked ->
+//            settingsViewModel.toggleNotifications(isChecked)
+//        }
 
         settingsViewModel.loadSettings()
     }
