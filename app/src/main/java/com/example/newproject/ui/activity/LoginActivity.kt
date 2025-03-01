@@ -2,6 +2,7 @@ package com.example.newproject.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -59,6 +60,8 @@ class LoginActivity : AppCompatActivity() {
                         finish()
                     } else {
                         Toast.makeText(this@LoginActivity, message, Toast.LENGTH_SHORT).show()
+                        binding.displayloginresult.text = "login failed"
+                        binding.displayloginresult.visibility = View.GONE
                         loadingUtils.dismiss()
                     }
                 }
